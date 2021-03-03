@@ -1,0 +1,41 @@
+using System.CodeDom.Compiler;
+using System.Collections.Generic;
+using System.Collections;
+using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
+using System.Globalization;
+using System.IO;
+using System.Linq;
+using System.Reflection;
+using System.Runtime.Serialization;
+using System.Text.RegularExpressions;
+using System.Text;
+using System;
+
+class Solution {
+
+    // Complete the staircase function below.
+    static void staircase(int n) {
+        for (int i = 1; i <= n; i++) {
+            var sb = new StringBuilder();
+            
+            // ad n-i spaces
+            for (int j = 1; j <= n - i; j++) {
+                sb.Append(' ');
+            }
+            
+            // append i # (sharps)
+            for (int k = 1; k <= i; k++) {
+                sb.Append('#');   
+            }
+            
+            Console.WriteLine(sb.ToString());
+        }
+    }
+
+    static void Main(string[] args) {
+        int n = Convert.ToInt32(Console.ReadLine());
+
+        staircase(n);
+    }
+}
